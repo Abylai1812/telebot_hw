@@ -12,6 +12,10 @@ def start(message):
     item_balance = types.KeyboardButton("balance")
     markup.add(item_dog, item_github, item_balance)
     bot.send_message(message.chat.id, "Привет! Я бот. Выбери команду:", reply_markup=markup)
+    
+@bot.message_handler(commands=['info'])
+def info(message):
+    bot.send_message(message.chat.id, "Привет! Я бот созданный для работы ученика группы Python-16 Тогамысов Абулхаиром")
 
 @bot.message_handler(commands=['dog'])
 def send_dog(message):
